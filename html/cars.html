@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoMarket – Premium Collection</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Auto<span>Market</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html" class="active">Cars</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero dark-section">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="page-hero-content animate-fade-up">
+        <h1>Premium Collection</h1>
+        <p>Explore our curated selection of luxury vehicles</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cars-page section-padding">
+    <div class="container">
+      <div class="filters-bar animate-fade-up">
+        <p class="vehicles-count" id="vehicles-count">8 vehicles available</p>
+        <div class="filters">
+          <div class="filter-group">
+            <label>Brand</label>
+            <select id="filter-brand">
+              <option value="">All Brands</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes">Mercedes</option>
+              <option value="Porsche">Porsche</option>
+              <option value="Audi">Audi</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Lamborghini">Lamborghini</option>
+              <option value="McLaren">McLaren</option>
+              <option value="Range Rover">Range Rover</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Fuel Type</label>
+            <select id="filter-fuel">
+              <option value="">All Fuels</option>
+              <option value="Gasoline">Gasoline</option>
+              <option value="Electric">Electric</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Price Range</label>
+            <select id="filter-price">
+              <option value="">All Prices</option>
+              <option value="0-100000">Under $100,000</option>
+              <option value="100000-200000">$100,000 – $200,000</option>
+              <option value="200000-999999">Over $200,000</option>
+            </select>
+          </div>
+          <button class="btn-outline" id="reset-filters">Reset Filters</button>
+        </div>
+      </div>
+      <div class="cars-grid" id="cars-grid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Auto<span>Market</span></a>
+        <p>Your trusted partner for premium automotive excellence since 2024.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>1234 Luxury Lane</p>
+        <p>Beverly Hills, CA 90210</p>
+        <p>+1 (555) 123-4567</p>
+        <p>info@automarket.com</p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm5.75-.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+          </a>
+          <a href="#" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/></svg>
+          </a>
+          <a href="#" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.22 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AutoMarket. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    const grid = document.getElementById('cars-grid');
+    const countEl = document.getElementById('vehicles-count');
+
+    function renderCars(list) {
+      grid.innerHTML = '';
+      countEl.textContent = list.length + ' vehicles available';
+      list.forEach((car, i) => {
+        const div = document.createElement('div');
+        div.innerHTML = createCarCard(car);
+        const card = div.firstElementChild;
+        card.style.animationDelay = (i * 0.08) + 's';
+        card.classList.add('animate-fade-up');
+        grid.appendChild(card);
+      });
+      initAnimations();
+    }
+
+    function applyFilters() {
+      const brand = document.getElementById('filter-brand').value;
+      const fuel = document.getElementById('filter-fuel').value;
+      const price = document.getElementById('filter-price').value;
+      const filtered = carsData.filter(car => {
+        if (brand && car.brand !== brand) return false;
+        if (fuel && car.fuel !== fuel) return false;
+        if (price) {
+          const [min, max] = price.split('-').map(Number);
+          if (car.price < min || car.price > max) return false;
+        }
+        return true;
+      });
+      renderCars(filtered);
+    }
+
+    document.getElementById('filter-brand').addEventListener('change', applyFilters);
+    document.getElementById('filter-fuel').addEventListener('change', applyFilters);
+    document.getElementById('filter-price').addEventListener('change', applyFilters);
+    document.getElementById('reset-filters').addEventListener('click', () => {
+      document.getElementById('filter-brand').value = '';
+      document.getElementById('filter-fuel').value = '';
+      document.getElementById('filter-price').value = '';
+      renderCars(carsData);
+    });
+
+    renderCars(carsData);
+    initAnimations();
+  </script>
+</body>
+</html>
