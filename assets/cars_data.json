@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "BMW M4 Competition",
+    "brand": "BMW",
+    "price": 74900,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Automatic",
+    "engine": "3.0L Twin-Turbo I6",
+    "image": "../assets/img/bmw.jpg",
+    "badge": "Popular"
+  },
+  {
+    "id": 2,
+    "name": "Mercedes-AMG GT",
+    "brand": "Mercedes",
+    "price": 89900,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Automatic",
+    "engine": "4.0L V8 Biturbo",
+    "image": "../assets/img/mercedes.jpg",
+    "badge": "New"
+  },
+  {
+    "id": 3,
+    "name": "Porsche 911 Carrera",
+    "brand": "Porsche",
+    "price": 106100,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Manual",
+    "engine": "3.0L Twin-Turbo Flat-6",
+    "image": "../assets/img/porsche.jpg",
+    "badge": "Hot"
+  },
+  {
+    "id": 4,
+    "name": "Audi RS e-tron GT",
+    "brand": "Audi",
+    "price": 142400,
+    "year": 2024,
+    "fuel": "Electric",
+    "transmission": "Automatic",
+    "engine": "Dual Electric Motors",
+    "image": "../assets/img/audi.jpg",
+    "badge": "Electric"
+  },
+  {
+    "id": 5,
+    "name": "Tesla Model S Plaid",
+    "brand": "Tesla",
+    "price": 108990,
+    "year": 2024,
+    "fuel": "Electric",
+    "transmission": "Automatic",
+    "engine": "Tri Motor Electric",
+    "image": "../assets/img/tesla.jpg",
+    "badge": "Electric"
+  },
+  {
+    "id": 6,
+    "name": "Lamborghini Huracán EVO",
+    "brand": "Lamborghini",
+    "price": 274390,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Automatic",
+    "engine": "5.2L V10",
+    "image": "../assets/img/lamborghini.jpg",
+    "badge": "Exclusive"
+  },
+  {
+    "id": 7,
+    "name": "McLaren 720S",
+    "brand": "McLaren",
+    "price": 299000,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Automatic",
+    "engine": "4.0L V8 Twin-Turbo",
+    "image": "../assets/img/mclaren.jpg",
+    "badge": "Exclusive"
+  },
+  {
+    "id": 8,
+    "name": "Range Rover Sport SVR",
+    "brand": "Range Rover",
+    "price": 115000,
+    "year": 2024,
+    "fuel": "Gasoline",
+    "transmission": "Automatic",
+    "engine": "5.0L Supercharged V8",
+    "image": "../assets/img/rangerover.jpg",
+    "badge": "SUV"
+  }
+]

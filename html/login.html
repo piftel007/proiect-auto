@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoMarket – Login</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <p>Don't have an account? <a href="register.html">Register</a></p>
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 50%, #0a0a0a 100%);
+    }
+    .auth-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .auth-card {
+      position: relative;
+      z-index: 2;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      margin: 2rem;
+      animation: authFadeIn 0.6s ease forwards;
+    }
+    @keyframes authFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .auth-logo { text-align: center; margin-bottom: 2rem; }
+    .auth-logo a { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; color: #fff; }
+    .auth-logo a span { color: var(--red); }
+    .auth-title { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.4rem; text-align: center; }
+    .auth-subtitle { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2rem; }
+    .input-wrapper { position: relative; }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .input-wrapper input { padding-left: 2.5rem; }
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      padding: 0;
+      display: flex;
+      transition: color var(--transition);
+    }
+    .toggle-password:hover { color: var(--text); }
+    .toggle-password svg { width: 16px; height: 16px; }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .checkbox-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--red); cursor: pointer; }
+    .forgot-link { font-size: 0.88rem; color: var(--red); transition: opacity var(--transition); }
+    .forgot-link:hover { opacity: 0.8; }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .auth-divider span { color: var(--text-muted); font-size: 0.8rem; }
+    .auth-footer { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); }
+    .auth-footer a { color: var(--red); transition: opacity var(--transition); }
+    .auth-footer a:hover { opacity: 0.8; }
+    .form-error {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1rem;
+      background: rgba(227,28,37,0.1);
+      border: 1px solid rgba(227,28,37,0.3);
+      border-radius: var(--radius);
+      color: #ff6b6b;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+    .form-error.show { display: flex; }
+    .form-error svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .form-success {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 0.75rem 1rem;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: var(--radius);
+      color: #4ade80;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+    .form-success.show { display: flex; }
+    .form-success svg { width: 16px; height: 16px; flex-shrink: 0; }
+    @media (max-width: 480px) {
+      .auth-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Auto<span>Market</span></a>
+      <ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="cars.html">Cars</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="login.html" class="active">Login</a></li>
+<li><a href="register.html">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="auth-page">
+    <div class="auth-bg"></div>
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        <a href="index.html">Auto<span>Market</span></a>
+      </div>
+
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-subtitle">Sign in to your AutoMarket account</p>
+
+      <div class="form-error" id="form-error">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span id="error-msg">Invalid email or password.</span>
+      </div>
+
+      <div class="form-success" id="form-success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span id="success-msg">Login successful! Redirecting...</span>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input type="email" id="email" placeholder="your.email@example.com" autocomplete="email"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password"/>
+          <button class="toggle-password" type="button" onclick="togglePw()">
+            <svg id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="remember"/>
+          Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button class="btn-primary btn-full" id="login-btn" onclick="handleLogin()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Sign In
+      </button>
+
+      <div class="auth-divider"><span>or</span></div>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Create one</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../js/script.js"></script>
+  <script>
+    function togglePw() {
+      const input = document.getElementById('password');
+      const icon = document.getElementById('eye-icon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerHTML = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+      } else {
+        input.type = 'password';
+        icon.innerHTML = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+      }
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const remember = document.getElementById('remember').checked;
+      const errorBox = document.getElementById('form-error');
+      const successBox = document.getElementById('form-success');
+      const btn = document.getElementById('login-btn');
+
+      errorBox.classList.remove('show');
+      successBox.classList.remove('show');
+
+      if (!email || !password) {
+        document.getElementById('error-msg').textContent = 'Please fill in all fields.';
+        errorBox.classList.add('show');
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById('error-msg').textContent = 'Please enter a valid email address.';
+        errorBox.classList.add('show');
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('automarket_users') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (!user) {
+        document.getElementById('error-msg').textContent = 'Invalid email or password. Please try again.';
+        errorBox.classList.add('show');
+        return;
+      }
+
+      if (remember) {
+        localStorage.setItem('automarket_logged', JSON.stringify({ email: user.email, firstName: user.firstName, lastName: user.lastName }));
+      } else {
+        sessionStorage.setItem('automarket_logged', JSON.stringify({ email: user.email, firstName: user.firstName, lastName: user.lastName }));
+      }
+
+      document.getElementById('success-msg').textContent = `Welcome back, ${user.firstName}! Redirecting...`;
+      successBox.classList.add('show');
+      btn.disabled = true;
+
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+    }
+
+    document.getElementById('email').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('password').focus();
+    });
+    document.getElementById('password').addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleLogin();
+    });
+  </script>
+</body>
+</html>
